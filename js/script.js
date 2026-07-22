@@ -1,35 +1,22 @@
-const images = document.querySelectorAll(".gallery img");
+const projects = [
 
-const lightbox = document.getElementById("lightbox");
+{
+title:"Downspot Layout & Detail",
+folder:"downspot-layout-detail",
+images:[
+"01.jpg",
+"02.jpg",
+"03.jpg"
+]
+},
 
-const lightboxImage = document.getElementById("lightbox-img");
+{
+title:"Pipeline Schematic",
+folder:"pipeline-schematic",
+images:[
+"01.jpg",
+"02.jpg"
+]
+}
 
-const close = document.querySelector(".close");
-
-images.forEach(img=>{
-
-    img.addEventListener("click",function(){
-
-        lightbox.style.display="flex";
-
-        lightboxImage.src=this.src;
-
-    });
-
-});
-
-close.addEventListener("click",function(){
-
-    lightbox.style.display="none";
-
-});
-
-lightbox.addEventListener("click",function(e){
-
-    if(e.target!==lightboxImage){
-
-        lightbox.style.display="none";
-
-    }
-
-});
+];
