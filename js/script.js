@@ -69,6 +69,33 @@ const projects = [
 },
 
 {
+    title: "Structural Framing Plan & Elevation",
+
+    description:
+    "Structural framing drawings including plan and elevation views with beam, column and structural member layout.",
+
+    folder: "structural-framing-plan-and-elevation",
+
+    preview: "01.jpg",
+
+    images: [
+
+        "01.jpg",
+        "02.jpg",
+        "03.jpg",
+        "04.jpg",
+        "05.jpg",
+        "06.jpg",
+        "07.jpg",
+        "08.jpg",
+        "09.jpg"
+        
+
+    ]
+
+},
+    
+{
     title: "General Arrangement Storage Tank",
 
     description:
