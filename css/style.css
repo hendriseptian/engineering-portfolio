@@ -934,3 +934,46 @@ nav a{
 }
 
 }
+/*=========================================
+ACTIVE MENU
+=========================================*/
+
+nav a.active{
+
+    background:#0F4C81;
+
+    color:#fff;
+
+}
+
+/*=========================================
+SCROLL ANIMATION
+=========================================*/
+
+.project{
+
+    transition:
+        opacity .6s,
+        transform .6s;
+
+}
+
+.project.show{
+
+    opacity:1 !important;
+
+    transform:translateY(0) !important;
+
+}
+
+/*=========================================
+LIGHTBOX TRANSITION
+=========================================*/
+
+#lightbox-image{
+
+    transition:
+        opacity .2s,
+        transform .2s;
+
+}
