@@ -4,133 +4,135 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Engineering Portfolio</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/style.css">
+    <title>Mechanical Engineering Portfolio</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
 
 </head>
 
 <body>
 
+<!-- ===========================
+     HEADER
+============================ -->
+
 <header>
 
-    <h1>Mechanical Engineering Portfolio</h1>
+    <div class="hero">
 
-    <p>
-        Selected Engineering Projects
-    </p>
+        <h1>Mechanical Engineering Portfolio</h1>
+
+        <p>
+            Engineering Drawings & Technical Projects
+        </p>
+
+    </div>
 
 </header>
 
-<div class="container">
 
-    <!-- Structural Steel -->
+<!-- ===========================
+     NAVIGATION
+============================ -->
 
-    <section class="project">
+<nav>
 
-        <h2>Structural Steel Drawing</h2>
+    <ul id="menu">
 
-        <p>
-            Structural steel drawings for industrial and portable steel building projects.
-        </p>
+        <!-- dibuat otomatis oleh script.js -->
 
-        <div class="gallery">
+    </ul>
 
-            <img src="portofolio/structural-steel/steel01.jpg">
-
-            <img src="portofolio/structural-steel/steel02.jpg">
-
-            <img src="portofolio/structural-steel/steel03.jpg">
-
-        </div>
-
-    </section>
+</nav>
 
 
+<!-- ===========================
+     INTRODUCTION
+============================ -->
 
-    <!-- PFD -->
+<section class="intro">
 
-    <section class="project">
+    <h2>
 
-        <h2>Process Flow Diagram (PFD)</h2>
+        Project Gallery
 
-        <p>
-            Process Flow Diagram developed for Oil & Gas facilities.
-        </p>
+    </h2>
 
-        <div class="gallery">
+    <p>
 
-            <img src="portofolio/pfd/pfd01.jpg">
+        This portfolio presents selected engineering drawings and technical documentation
+        developed throughout my professional experience in structural, piping, mechanical,
+        and pressure equipment projects.
 
-            <img src="portofolio/pfd/pfd02.jpg">
+    </p>
 
-        </div>
-
-    </section>
-
-
-
-    <!-- P&ID -->
-
-    <section class="project">
-
-        <h2>Piping & Instrumentation Diagram</h2>
-
-        <p>
-            P&ID development and revision for Oil & Gas facilities.
-        </p>
-
-        <div class="gallery">
-
-            <img src="portofolio/pid/pid01.jpg">
-
-            <img src="portofolio/pid/pid02.jpg">
-
-            <img src="portofolio/pid/pid03.jpg">
-
-        </div>
-
-    </section>
+</section>
 
 
+<!-- ===========================
+     PROJECT LIST
+============================ -->
 
-    <!-- Pressure Vessel -->
+<main id="portfolio">
 
-    <section class="project">
+    <!-- seluruh project dibuat otomatis -->
 
-        <h2>Pressure Vessel Assessment</h2>
+</main>
 
-        <p>
-            Remaining Life Assessment (RLA) and engineering documentation.
-        </p>
 
-        <div class="gallery">
+<!-- ===========================
+     LIGHTBOX
+============================ -->
 
-            <img src="portofolio/pressure-vessel/pv01.jpg">
+<div
+    id="lightbox"
+    class="lightbox">
 
-            <img src="portofolio/pressure-vessel/pv02.jpg">
+    <span id="close">
 
-        </div>
+        &times;
 
-    </section>
+    </span>
+
+    <button id="previous">
+
+        &#10094;
+
+    </button>
+
+    <img
+        id="lightbox-image"
+        src=""
+        alt="Portfolio Image">
+
+    <button id="next">
+
+        &#10095;
+
+    </button>
 
 </div>
 
-<div class="lightbox" id="lightbox">
 
-    <span class="close">&times;</span>
-
-    <img id="lightbox-img">
-
-</div>
+<!-- ===========================
+     FOOTER
+============================ -->
 
 <footer>
 
-© 2026 Hendri Septian
+    <p>
+
+        © 2026 Mechanical Engineering Portfolio
+
+    </p>
 
 </footer>
+
 
 <script src="js/script.js"></script>
 
