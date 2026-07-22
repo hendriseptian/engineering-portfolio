@@ -733,21 +733,49 @@ header{
 
 nav ul{
 
-    flex-direction:column;
+    display:flex;
 
-    padding:10px;
+    flex-direction:row;
+
+    flex-wrap:nowrap;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    overflow-x:auto;
+
+    overflow-y:hidden;
+
+    white-space:nowrap;
+
+    gap:12px;
+
+    padding:12px 10px;
+
+    scrollbar-width:none;
+
+}
+
+nav ul::-webkit-scrollbar{
+
+    display:none;
 
 }
 
 nav li{
 
-    width:100%;
+    width:auto;
+
+    flex:0 0 auto;
 
 }
 
 nav a{
 
     text-align:center;
+
+    white-space:nowrap;
 
 }
 
