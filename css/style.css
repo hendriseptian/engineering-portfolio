@@ -1,1 +1,122 @@
+/* ===============================
+   Engineering Portfolio
+   =============================== */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f6fa;
+    color:#333;
+}
+
+header{
+    background:#0F4C81;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+header h1{
+    font-size:40px;
+}
+
+header p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+.container{
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+    padding:40px 0;
+}
+
+.project{
+    background:white;
+    margin-bottom:60px;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.project h2{
+    color:#0F4C81;
+    margin-bottom:10px;
+}
+
+.project p{
+    margin-bottom:20px;
+    color:#666;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+    box-shadow:0 10px 20px rgba(0,0,0,.2);
+}
+
+/* Lightbox */
+
+.lightbox{
+    display:none;
+    position:fixed;
+    z-index:9999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.9);
+    justify-content:center;
+    align-items:center;
+}
+
+.lightbox img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:8px;
+}
+
+.close{
+    position:absolute;
+    top:25px;
+    right:40px;
+    color:white;
+    font-size:45px;
+    cursor:pointer;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#777;
+}
+
+@media(max-width:768px){
+
+header h1{
+    font-size:28px;
+}
+
+.project{
+    padding:20px;
+}
+
+}
