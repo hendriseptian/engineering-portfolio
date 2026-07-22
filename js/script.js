@@ -14,7 +14,7 @@ const projects = [
     title: "Downspot Layout & Detail",
 
     description:
-    "Roof drainage layout and detailed engineering drawings including gutter arrangement, downspout routing and installation details.",
+    "Roof gutter layout and detailed engineering drawings including gutter arrangement, downspout routing and installation details.",
 
     folder: "downspot-layout-detail",
 
@@ -89,6 +89,27 @@ const projects = [
         "07.jpg",
         "08.jpg",
         "09.jpg"
+        
+
+    ]
+
+},
+
+    {
+    title: "Architectural Insulation Layout and Detail",
+
+    description:
+    "Architectural insulation layout and detail drawings showing insulation arrangement, material application and installation details.",
+
+    folder: "architectural-insulation-layout-and-detail",
+
+    preview: "01.jpg",
+
+    images: [
+
+        "01.jpg",
+        "02.jpg",
+        "03.jpg"
         
 
     ]
