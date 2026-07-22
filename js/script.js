@@ -1,12 +1,12 @@
-/*=========================================================
-  Engineering Portfolio
-  Author : Hendri Septian
-  Version : 1.0
-=========================================================*/
+/*==================================================
+ENGINEERING PORTFOLIO
+Author : Hendri Septian
+Version : 1.0
+==================================================*/
 
-/*=========================================================
+/*==================================================
 PROJECT DATA
-=========================================================*/
+==================================================*/
 
 const projects = [
 
@@ -14,146 +14,182 @@ const projects = [
     title: "Downspot Layout & Detail",
 
     description:
-    "Preparation of roof drainage layout and detailed drawings including downspout routing, gutter connections and installation details for steel buildings.",
+    "Roof drainage layout and detailed engineering drawings including gutter arrangement, downspout routing and installation details.",
 
     folder: "downspot-layout-detail",
 
     preview: "downspot layout & detail-1.jpg",
 
     images: [
+
         "downspot layout & detail-1.jpg",
         "downspot layout & detail-2.jpg",
         "downspot layout & detail-3.jpg"
+
     ]
+
 },
 
 {
     title: "General Arrangement Pressure Vessel",
 
     description:
-    "Development of general arrangement drawings for pressure vessels including dimensions, nozzles, support configuration and fabrication references.",
+    "General arrangement drawing for pressure vessel including nozzle orientation, support configuration and principal dimensions.",
 
     folder: "general-arrangement-pressure-vessel",
 
     preview: "PV 01A.jpg",
 
     images: [
+
         "PV 01A.jpg"
+
     ]
+
 },
 
 {
     title: "General Arrangement Steel Building",
 
     description:
-    "Preparation of structural steel general arrangement drawings including framing plans, elevations and construction details.",
+    "Structural steel framing layout including elevations, sections and connection details.",
 
     folder: "general-arrangement-steel-building",
 
     preview: "general arrangement-1.jpg",
 
     images: [
+
         "general arrangement-1.jpg",
         "general arrangement-2.jpg",
         "general arrangement-3.jpg"
+
     ]
+
 },
 
 {
     title: "General Arrangement Storage Tank",
 
     description:
-    "Development of storage tank general arrangement drawings including shell, roof, bottom plate and nozzle arrangement.",
+    "General arrangement drawing of atmospheric storage tank including shell, roof, bottom plate and nozzle arrangement.",
 
     folder: "general-arrangement-storage-tank",
 
     preview: "TANK-001.jpg",
 
     images: [
+
         "TANK-001.jpg"
+
     ]
+
 },
 
 {
     title: "Pipeline Schematic",
 
     description:
-    "Preparation of pipeline schematic drawings illustrating process flow, equipment connections and pipeline routing.",
+    "Pipeline schematic drawing showing flow direction, equipment connection and pipeline routing.",
 
     folder: "pipeline-schematic",
 
     preview: "Pipeline Schematic Drawing.jpg",
 
     images: [
+
         "Pipeline Schematic Drawing.jpg"
+
     ]
+
 },
 
 {
     title: "Piping & Instrumentation Diagram",
 
     description:
-    "Development of piping and instrumentation diagrams showing piping systems, valves, instruments and process equipment.",
+    "Process piping and instrumentation diagram showing equipment, valves and instruments.",
 
     folder: "piping-instrumentation-diagram",
 
     preview: "P&ID.jpg",
 
     images: [
+
         "P&ID.jpg"
+
     ]
+
 }
 
 ];
 
-/*=========================================================
-ELEMENT
-=========================================================*/
+/*==================================================
+HTML ELEMENT
+==================================================*/
 
-const portfolio = document.getElementById("portfolio");
 const menu = document.getElementById("menu");
 
-/*=========================================================
-LIGHTBOX ELEMENT
-(akan dipakai pada Part 2)
-=========================================================*/
+const portfolio = document.getElementById("portfolio");
 
 const lightbox = document.getElementById("lightbox");
-const lightboxImage = document.getElementById("lightbox-image");
-const btnClose = document.getElementById("close");
-const btnPrev = document.getElementById("previous");
-const btnNext = document.getElementById("next");
-const imageCounter = document.getElementById("image-counter");
 
-/*=========================================================
+const lightboxImage =
+document.getElementById("lightbox-image");
+
+const imageCounter =
+document.getElementById("image-counter");
+
+const btnClose =
+document.getElementById("close");
+
+const btnPrevious =
+document.getElementById("previous");
+
+const btnNext =
+document.getElementById("next");
+
+const loading =
+document.getElementById("loading");
+
+const backToTop =
+document.getElementById("backToTop");
+
+/*==================================================
 GLOBAL VARIABLE
-=========================================================*/
+==================================================*/
 
 let currentProject = null;
-let currentIndex = 0;
 
-/*=========================================================
-GENERATE PROJECT
-=========================================================*/
+let currentImage = 0;
+
+let zoom = 1;
+
+/*==================================================
+GENERATE PROJECT CARD
+==================================================*/
 
 projects.forEach(project => {
 
-    /*==========================
-      Navigation
-    ==========================*/
+    /*==============================
+    Navigation
+    ==============================*/
 
     const menuItem = document.createElement("li");
 
     menuItem.innerHTML =
+
     `<a href="#${project.folder}">
+
         ${project.title}
+
     </a>`;
 
     menu.appendChild(menuItem);
 
-    /*==========================
-      Section
-    ==========================*/
+    /*==============================
+    Card
+    ==============================*/
 
     const section = document.createElement("section");
 
@@ -161,184 +197,131 @@ projects.forEach(project => {
 
     section.id = project.folder;
 
-    /*==========================
-      Project Card
-    ==========================*/
+    section.innerHTML =
 
-    section.innerHTML = `
+`
+<div class="project-content">
 
-    <div class="project-content">
+<h2>
 
-        <h2>
+${project.title}
 
-            ${project.title}
+</h2>
 
-        </h2>
+<p class="description">
 
-        <p class="description">
+${project.description}
 
-            ${project.description}
+</p>
 
-        </p>
+<img
 
-        <img
+class="preview"
 
-            class="preview"
+loading="lazy"
 
-            src="portofolio/${project.folder}/${encodeURIComponent(project.preview)}"
+src="portofolio/${project.folder}/${encodeURIComponent(project.preview)}"
 
-            alt="${project.title}"
+alt="${project.title}"
 
-            loading="lazy"
+>
 
-        >
+<div class="project-footer">
 
-        <div class="project-footer">
+<div class="drawing-count">
 
-            <div class="drawing-count">
+${project.images.length}
+Drawing${project.images.length>1?"s":""}
 
-                ${project.images.length}
-                Drawing${project.images.length > 1 ? "s" : ""}
+</div>
 
-            </div>
+<button class="view-btn">
 
-            <button class="view-btn">
+View Full Size
 
-                View Full Size
+</button>
 
-            </button>
+</div>
 
-        </div>
+</div>
+`;
 
-    </div>
+    portfolio.appendChild(section);
 
-    `;
+    /*==============================
+    Event
+    ==============================*/
 
-    /*==========================
-      Button Event
-    ==========================*/
+    const preview =
+    section.querySelector(".preview");
 
     const button =
-        section.querySelector(".view-btn");
+    section.querySelector(".view-btn");
 
-    button.addEventListener("click", () => {
+    preview.addEventListener("click",()=>{
 
         openGallery(project,0);
 
     });
 
-    portfolio.appendChild(section);
+    button.addEventListener("click",()=>{
 
-});
-
-/*=========================================================
-OPEN GALLERY
-=========================================================*/
-
-function openGallery(project,index){
-
-    currentProject = project;
-
-    currentIndex = index;
-
-    updateLightbox();
-
-    lightbox.classList.add("active");
-
-    document.body.style.overflow="hidden";
-
-}
-
-/*=========================================================
-UPDATE IMAGE
-=========================================================*/
-
-function updateLightbox(){
-
-    if(!currentProject) return;
-
-    lightboxImage.src =
-    `portofolio/${currentProject.folder}/${encodeURIComponent(currentProject.images[currentIndex])}`;
-
-    imageCounter.textContent =
-    `${currentIndex+1} / ${currentProject.images.length}`;
-
-}
-/*=========================================================
-CLICK PREVIEW IMAGE
-=========================================================*/
-
-document.querySelectorAll(".preview").forEach((img,index)=>{
-
-    img.addEventListener("click",()=>{
-
-        openGallery(projects[index],0);
+        openGallery(project,0);
 
     });
 
 });
 
-/*=========================================================
-NEXT IMAGE
-=========================================================*/
+/*==================================================
+OPEN GALLERY
+==================================================*/
 
-function nextImage(){
+function openGallery(project,index){
 
-    if(!currentProject) return;
+    currentProject = project;
 
-    currentIndex++;
+    currentImage = index;
 
-    if(currentIndex >= currentProject.images.length){
+    updateImage();
 
-        currentIndex = 0;
+    lightbox.classList.add("active");
 
-    }
-
-    updateLightbox();
+    document.body.style.overflow = "hidden";
 
 }
 
-/*=========================================================
-PREVIOUS IMAGE
-=========================================================*/
+/*==================================================
+UPDATE IMAGE
+==================================================*/
 
-function previousImage(){
+function updateImage(){
 
-    if(!currentProject) return;
+    if(currentProject==null) return;
 
-    currentIndex--;
+    lightboxImage.src =
 
-    if(currentIndex < 0){
+`portofolio/${currentProject.folder}/${encodeURIComponent(currentProject.images[currentImage])}`;
 
-        currentIndex = currentProject.images.length-1;
+    imageCounter.innerHTML =
 
-    }
-
-    updateLightbox();
+`${currentImage+1} / ${currentProject.images.length}`;
 
 }
 
-/*=========================================================
-BUTTON EVENT
-=========================================================*/
+/*==================================================
+WINDOW LOAD
+==================================================*/
 
-btnNext.addEventListener("click",()=>{
+window.addEventListener("load",()=>{
 
-    nextImage();
-
-});
-
-btnPrev.addEventListener("click",()=>{
-
-    previousImage();
+    loading.style.display="none";
 
 });
+/*==================================================
+CLOSE GALLERY
+==================================================*/
 
-/*=========================================================
-CLOSE LIGHTBOX
-=========================================================*/
-
-function closeLightbox(){
+function closeGallery(){
 
     lightbox.classList.remove("active");
 
@@ -346,29 +329,91 @@ function closeLightbox(){
 
 }
 
-btnClose.addEventListener("click",()=>{
+btnClose.addEventListener("click",closeGallery);
 
-    closeLightbox();
+/*==================================================
+NEXT IMAGE
+==================================================*/
 
-});
+function nextImage(){
 
-/*=========================================================
-CLICK BACKGROUND TO CLOSE
-=========================================================*/
+    if(!currentProject) return;
+
+    currentImage++;
+
+    if(currentImage>=currentProject.images.length){
+
+        currentImage=0;
+
+    }
+
+    fadeImage();
+
+}
+
+/*==================================================
+PREVIOUS IMAGE
+==================================================*/
+
+function previousImage(){
+
+    if(!currentProject) return;
+
+    currentImage--;
+
+    if(currentImage<0){
+
+        currentImage=currentProject.images.length-1;
+
+    }
+
+    fadeImage();
+
+}
+
+/*==================================================
+FADE TRANSITION
+==================================================*/
+
+function fadeImage(){
+
+    lightboxImage.style.opacity="0";
+
+    setTimeout(()=>{
+
+        updateImage();
+
+        lightboxImage.style.opacity="1";
+
+    },180);
+
+}
+
+/*==================================================
+BUTTON EVENT
+==================================================*/
+
+btnNext.addEventListener("click",nextImage);
+
+btnPrevious.addEventListener("click",previousImage);
+
+/*==================================================
+CLICK OUTSIDE IMAGE
+==================================================*/
 
 lightbox.addEventListener("click",(e)=>{
 
     if(e.target===lightbox){
 
-        closeLightbox();
+        closeGallery();
 
     }
 
 });
 
-/*=========================================================
+/*==================================================
 KEYBOARD
-=========================================================*/
+==================================================*/
 
 document.addEventListener("keydown",(e)=>{
 
@@ -390,7 +435,7 @@ document.addEventListener("keydown",(e)=>{
 
         case "Escape":
 
-            closeLightbox();
+            closeGallery();
 
         break;
 
@@ -398,47 +443,13 @@ document.addEventListener("keydown",(e)=>{
 
 });
 
-/*=========================================================
-IMAGE ERROR
-=========================================================*/
-
-lightboxImage.addEventListener("error",()=>{
-
-    console.error("Image not found.");
-
-});
-
-/*=========================================================
-PRELOAD IMAGE
-=========================================================*/
-
-function preloadImages(){
-
-    projects.forEach(project=>{
-
-        project.images.forEach(file=>{
-
-            const img=new Image();
-
-            img.src=`portofolio/${project.folder}/${encodeURIComponent(file)}`;
-
-        });
-
-    });
-
-}
-
-preloadImages();
-
-/*=========================================================
+/*==================================================
 BACK TO TOP
-=========================================================*/
-
-const backToTop=document.getElementById("backToTop");
+==================================================*/
 
 window.addEventListener("scroll",()=>{
 
-    if(window.scrollY>500){
+    if(window.scrollY>400){
 
         backToTop.style.display="block";
 
@@ -464,37 +475,110 @@ backToTop.addEventListener("click",()=>{
 
 });
 
-/*=========================================================
-LOADING
-=========================================================*/
+/*==================================================
+ACTIVE NAVIGATION
+==================================================*/
 
-const loading=document.getElementById("loading");
+const sections=document.querySelectorAll(".project");
 
-window.addEventListener("load",()=>{
+const navLinks=document.querySelectorAll("#menu a");
 
-    loading.style.display="none";
+window.addEventListener("scroll",()=>{
+
+    let current="";
+
+    sections.forEach(section=>{
+
+        const top=section.offsetTop-150;
+
+        const height=section.offsetHeight;
+
+        if(window.scrollY>=top &&
+           window.scrollY<top+height){
+
+            current=section.id;
+
+        }
+
+    });
+
+    navLinks.forEach(link=>{
+
+        link.classList.remove("active");
+
+        if(link.getAttribute("href")==="#"+current){
+
+            link.classList.add("active");
+
+        }
+
+    });
 
 });
 
-/*=========================================================
-END PART 2
-=========================================================*/
-/*=========================================================
-ZOOM & DRAG
-=========================================================*/
+/*==================================================
+IMAGE ERROR HANDLER
+==================================================*/
+
+document.querySelectorAll(".preview").forEach(img=>{
+
+    img.addEventListener("error",()=>{
+
+        img.alt="Image not found";
+
+        img.style.opacity=".4";
+
+    });
+
+});
+
+lightboxImage.addEventListener("error",()=>{
+
+    lightboxImage.alt="Image not found";
+
+});
+
+/*==================================================
+PRELOAD CURRENT PROJECT
+==================================================*/
+
+function preloadProject(project){
+
+    project.images.forEach(file=>{
+
+        const img=new Image();
+
+        img.src=`portofolio/${project.folder}/${encodeURIComponent(file)}`;
+
+    });
+
+}
+
+projects.forEach(preloadProject);
+/*==================================================
+PART 3
+ZOOM - DRAG - SWIPE - FINAL
+==================================================*/
+
+/*==================================================
+ZOOM VARIABLE
+==================================================*/
 
 let scale = 1;
+
 let translateX = 0;
+
 let translateY = 0;
 
 let isDragging = false;
 
 let startX = 0;
+
 let startY = 0;
 
-/*=========================================================
-UPDATE IMAGE TRANSFORM
-=========================================================*/
+/*==================================================
+UPDATE TRANSFORM
+==================================================*/
 
 function updateTransform(){
 
@@ -503,9 +587,9 @@ function updateTransform(){
 
 }
 
-/*=========================================================
+/*==================================================
 RESET ZOOM
-=========================================================*/
+==================================================*/
 
 function resetZoom(){
 
@@ -519,35 +603,37 @@ function resetZoom(){
 
 }
 
-/*=========================================================
-RESET WHEN IMAGE CHANGES
-=========================================================*/
+/*==================================================
+RESET EVERY IMAGE CHANGE
+==================================================*/
 
-const originalUpdateLightbox = updateLightbox;
+const originalUpdateImage = updateImage;
 
-updateLightbox = function(){
+updateImage = function(){
 
-    originalUpdateLightbox();
+    originalUpdateImage();
 
     resetZoom();
 
 }
 
-/*=========================================================
+/*==================================================
 MOUSE WHEEL ZOOM
-=========================================================*/
+==================================================*/
 
 lightboxImage.addEventListener("wheel",(e)=>{
 
     e.preventDefault();
 
+    const step = 0.15;
+
     if(e.deltaY < 0){
 
-        scale += 0.15;
+        scale += step;
 
     }else{
 
-        scale -= 0.15;
+        scale -= step;
 
     }
 
@@ -565,11 +651,11 @@ lightboxImage.addEventListener("wheel",(e)=>{
 
     updateTransform();
 
-});
+},{passive:false});
 
-/*=========================================================
+/*==================================================
 DOUBLE CLICK RESET
-=========================================================*/
+==================================================*/
 
 lightboxImage.addEventListener("dblclick",()=>{
 
@@ -577,9 +663,9 @@ lightboxImage.addEventListener("dblclick",()=>{
 
 });
 
-/*=========================================================
-DRAG IMAGE
-=========================================================*/
+/*==================================================
+START DRAG
+==================================================*/
 
 lightboxImage.addEventListener("mousedown",(e)=>{
 
@@ -591,7 +677,13 @@ lightboxImage.addEventListener("mousedown",(e)=>{
 
     startY = e.clientY - translateY;
 
+    lightboxImage.style.cursor = "grabbing";
+
 });
+
+/*==================================================
+DRAGGING
+==================================================*/
 
 document.addEventListener("mousemove",(e)=>{
 
@@ -605,25 +697,31 @@ document.addEventListener("mousemove",(e)=>{
 
 });
 
+/*==================================================
+STOP DRAG
+==================================================*/
+
 document.addEventListener("mouseup",()=>{
 
     isDragging = false;
 
+    lightboxImage.style.cursor = "grab";
+
 });
 
-/*=========================================================
+/*==================================================
 TOUCH DRAG
-=========================================================*/
+==================================================*/
 
 lightboxImage.addEventListener("touchstart",(e)=>{
 
-    if(scale <= 1) return;
+    if(scale<=1) return;
 
-    isDragging = true;
+    isDragging=true;
 
-    startX = e.touches[0].clientX - translateX;
+    startX=e.touches[0].clientX-translateX;
 
-    startY = e.touches[0].clientY - translateY;
+    startY=e.touches[0].clientY-translateY;
 
 });
 
@@ -631,9 +729,9 @@ lightboxImage.addEventListener("touchmove",(e)=>{
 
     if(!isDragging) return;
 
-    translateX = e.touches[0].clientX - startX;
+    translateX=e.touches[0].clientX-startX;
 
-    translateY = e.touches[0].clientY - startY;
+    translateY=e.touches[0].clientY-startY;
 
     updateTransform();
 
@@ -641,32 +739,33 @@ lightboxImage.addEventListener("touchmove",(e)=>{
 
 lightboxImage.addEventListener("touchend",()=>{
 
-    isDragging = false;
+    isDragging=false;
 
 });
 
-/*=========================================================
-SWIPE NEXT / PREVIOUS
-=========================================================*/
+/*==================================================
+SWIPE
+==================================================*/
 
-let touchStartX = 0;
-let touchEndX = 0;
+let touchStartX=0;
+
+let touchEndX=0;
 
 lightbox.addEventListener("touchstart",(e)=>{
 
-    touchStartX = e.changedTouches[0].clientX;
+    touchStartX=e.changedTouches[0].clientX;
 
 });
 
 lightbox.addEventListener("touchend",(e)=>{
 
-    touchEndX = e.changedTouches[0].clientX;
+    touchEndX=e.changedTouches[0].clientX;
 
-    const distance = touchStartX - touchEndX;
+    const distance=touchStartX-touchEndX;
 
-    if(Math.abs(distance) < 60) return;
+    if(Math.abs(distance)<60) return;
 
-    if(distance > 0){
+    if(distance>0){
 
         nextImage();
 
@@ -680,9 +779,11 @@ lightbox.addEventListener("touchend",(e)=>{
 
 });
 
-/*=========================================================
+/*==================================================
 PREVENT IMAGE DRAG
-=========================================================*/
+==================================================*/
+
+lightboxImage.setAttribute("draggable","false");
 
 lightboxImage.addEventListener("dragstart",(e)=>{
 
@@ -690,146 +791,23 @@ lightboxImage.addEventListener("dragstart",(e)=>{
 
 });
 
-/*=========================================================
+/*==================================================
 RESET WHEN CLOSE
-=========================================================*/
+==================================================*/
 
-const originalClose = closeLightbox;
+const originalCloseGallery = closeGallery;
 
-closeLightbox = function(){
+closeGallery = function(){
 
     resetZoom();
 
-    originalClose();
-
-};
-/*=========================================================
-PART 4
-FINAL FEATURES
-=========================================================*/
-
-/*=========================================================
-ACTIVE MENU
-=========================================================*/
-
-const sections = document.querySelectorAll(".project");
-const menuLinks = document.querySelectorAll("#menu a");
-
-window.addEventListener("scroll", () => {
-
-    let current = "";
-
-    sections.forEach(section => {
-
-        const top = section.offsetTop - 150;
-        const height = section.offsetHeight;
-
-        if (window.scrollY >= top &&
-            window.scrollY < top + height) {
-
-            current = section.id;
-
-        }
-
-    });
-
-    menuLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        if (link.getAttribute("href") === "#" + current) {
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-});
-
-
-/*=========================================================
-SMOOTH IMAGE TRANSITION
-=========================================================*/
-
-function fadeImage(callback){
-
-    lightboxImage.style.opacity = 0;
-
-    setTimeout(() => {
-
-        callback();
-
-        lightboxImage.style.opacity = 1;
-
-    },150);
+    originalCloseGallery();
 
 }
 
-
-/*=========================================================
-OVERRIDE NEXT
-=========================================================*/
-
-const oldNext = nextImage;
-
-nextImage = function(){
-
-    fadeImage(() => {
-
-        oldNext();
-
-    });
-
-}
-
-
-/*=========================================================
-OVERRIDE PREVIOUS
-=========================================================*/
-
-const oldPrevious = previousImage;
-
-previousImage = function(){
-
-    fadeImage(() => {
-
-        oldPrevious();
-
-    });
-
-}
-
-
-/*=========================================================
-IMAGE FALLBACK
-=========================================================*/
-
-document.querySelectorAll(".preview").forEach(img=>{
-
-    img.addEventListener("error",()=>{
-
-        img.src="https://placehold.co/1200x800?text=Image+Not+Found";
-
-    });
-
-});
-
-
-/*=========================================================
-LIGHTBOX FALLBACK
-=========================================================*/
-
-lightboxImage.addEventListener("error",()=>{
-
-    lightboxImage.src="https://placehold.co/1200x800?text=Image+Not+Found";
-
-});
-
-
-/*=========================================================
+/*==================================================
 WINDOW RESIZE
-=========================================================*/
+==================================================*/
 
 window.addEventListener("resize",()=>{
 
@@ -837,10 +815,9 @@ window.addEventListener("resize",()=>{
 
 });
 
-
-/*=========================================================
+/*==================================================
 ORIENTATION CHANGE
-=========================================================*/
+==================================================*/
 
 window.addEventListener("orientationchange",()=>{
 
@@ -848,12 +825,11 @@ window.addEventListener("orientationchange",()=>{
 
 });
 
+/*==================================================
+SMOOTH REVEAL
+==================================================*/
 
-/*=========================================================
-LAZY OBSERVER
-=========================================================*/
-
-const observer = new IntersectionObserver(entries=>{
+const revealObserver = new IntersectionObserver(entries=>{
 
     entries.forEach(entry=>{
 
@@ -866,104 +842,24 @@ const observer = new IntersectionObserver(entries=>{
     });
 
 },{
-    threshold:.15
+    threshold:0.15
 });
-
-
-document.querySelectorAll(".project").forEach(project=>{
-
-    observer.observe(project);
-
-});
-
-
-/*=========================================================
-SCROLL REVEAL
-=========================================================*/
 
 document.querySelectorAll(".project").forEach(card=>{
 
-    card.style.opacity=0;
-
-    card.style.transform="translateY(40px)";
+    revealObserver.observe(card);
 
 });
 
-
-document.querySelectorAll(".project").forEach(card=>{
-
-    observer.observe(card);
-
-});
-
-
-/*=========================================================
-PRELOAD NEXT IMAGE
-=========================================================*/
-
-function preloadNext(){
-
-    if(!currentProject) return;
-
-    let next=currentIndex+1;
-
-    if(next>=currentProject.images.length){
-
-        next=0;
-
-    }
-
-    const img=new Image();
-
-    img.src=`portofolio/${currentProject.folder}/${encodeURIComponent(currentProject.images[next])}`;
-
-}
-
-
-const oldUpdate=updateLightbox;
-
-updateLightbox=function(){
-
-    oldUpdate();
-
-    preloadNext();
-
-}
-
-
-/*=========================================================
-COPYRIGHT
-=========================================================*/
+/*==================================================
+CONSOLE
+==================================================*/
 
 console.log(
-"%cEngineering Portfolio\n© Hendri Septian",
+"%cEngineering Portfolio Loaded",
 "color:#0F4C81;font-size:16px;font-weight:bold;"
 );
 
-
-/*=========================================================
-DISABLE RIGHT CLICK
-(Optional)
-=========================================================*/
-
-// document.addEventListener("contextmenu",(e)=>{
-//     e.preventDefault();
-// });
-
-
-/*=========================================================
-DISABLE IMAGE DRAG
-=========================================================*/
-
-document.querySelectorAll("img").forEach(img=>{
-
-    img.setAttribute("draggable","false");
-
-});
-
-
-/*=========================================================
+/*==================================================
 END
-=========================================================*/
-
-console.log("Engineering Portfolio Loaded Successfully");
+==================================================*/
