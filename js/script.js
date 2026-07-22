@@ -52,7 +52,7 @@ const projects = [
     title: "General Arrangement Steel Building",
 
     description:
-    "Structural steel framing layout including elevations, sections and connection details.",
+    "General arrangement steel building layout including view.",
 
     folder: "general-arrangement-steel-building",
 
