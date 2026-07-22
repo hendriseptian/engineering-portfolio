@@ -31,7 +31,7 @@ const projects = [
 },
 
 {
-    title: "General Arrangement Pressure Vessel",
+    title: "Pressure Vessel",
 
     description:
     "General arrangement drawing for pressure vessel including nozzle orientation, support configuration and principal dimensions.",
@@ -49,7 +49,7 @@ const projects = [
 },
 
 {
-    title: "General Arrangement Steel Building",
+    title: "Steel Building",
 
     description:
     "General arrangement steel building layout including view.",
@@ -117,7 +117,7 @@ const projects = [
 },
     
 {
-    title: "General Arrangement Storage Tank",
+    title: "Storage Tank",
 
     description:
     "General arrangement drawing of atmospheric storage tank including shell, roof, bottom plate and nozzle arrangement.",
