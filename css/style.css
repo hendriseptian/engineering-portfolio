@@ -1,12 +1,6 @@
-/*======================================================
-Engineering Portfolio
-Author : Hendri Septian
-Version : 1.0
-======================================================*/
-
-/*======================================================
-RESET
-======================================================*/
+/*==================================================
+GENERAL
+==================================================*/
 
 *{
     margin:0;
@@ -20,9 +14,9 @@ html{
 
 body{
 
-    font-family:"Segoe UI",Arial,sans-serif;
+    font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;
 
-    background:#f5f7fa;
+    background:#f3f6fb;
 
     color:#333;
 
@@ -30,69 +24,17 @@ body{
 
 }
 
-/*======================================================
-HEADER
-======================================================*/
+/*==================================================
+LOADING
+==================================================*/
 
-header{
+#loading{
 
-    background:linear-gradient(135deg,#0F4C81,#1D6FA5);
+    position:fixed;
 
-    color:#fff;
-
-    padding:80px 20px;
-
-    text-align:center;
-
-}
-
-.hero{
-
-    max-width:900px;
-
-    margin:auto;
-
-}
-
-.hero h1{
-
-    font-size:48px;
-
-    font-weight:700;
-
-    margin-bottom:10px;
-
-    letter-spacing:1px;
-
-}
-
-.hero p{
-
-    font-size:20px;
-
-    opacity:.9;
-
-}
-
-/*======================================================
-NAVIGATION
-======================================================*/
-
-nav{
-
-    position:sticky;
-
-    top:0;
-
-    z-index:1000;
+    inset:0;
 
     background:#ffffff;
-
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
-
-}
-
-nav ul{
 
     display:flex;
 
@@ -100,17 +42,87 @@ nav ul{
 
     align-items:center;
 
+    font-size:22px;
+
+    font-weight:bold;
+
+    color:#0F4C81;
+
+    z-index:999999;
+
+}
+
+/*==================================================
+HEADER
+==================================================*/
+
+header{
+
+    background:linear-gradient(135deg,#0F4C81,#23689b);
+
+    color:white;
+
+    text-align:center;
+
+    padding:80px 20px;
+
+}
+
+.hero h1{
+
+    font-size:52px;
+
+    margin-bottom:15px;
+
+}
+
+.hero p{
+
+    font-size:20px;
+
+    opacity:.95;
+
+}
+
+/*==================================================
+NAVIGATION
+==================================================*/
+
+nav{
+
+    background:white;
+
+    box-shadow:0 2px 12px rgba(0,0,0,.08);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+}
+
+nav ul{
+
+    width:95%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    display:flex;
+
     flex-wrap:wrap;
 
-    list-style:none;
+    justify-content:center;
 
-    padding:14px;
+    list-style:none;
 
 }
 
 nav li{
 
-    margin:6px;
+    margin:8px;
 
 }
 
@@ -118,15 +130,15 @@ nav a{
 
     display:block;
 
-    text-decoration:none;
+    padding:12px 18px;
 
     color:#0F4C81;
 
+    text-decoration:none;
+
     font-weight:600;
 
-    padding:10px 18px;
-
-    border-radius:25px;
+    border-radius:8px;
 
     transition:.3s;
 
@@ -136,21 +148,29 @@ nav a:hover{
 
     background:#0F4C81;
 
-    color:#ffffff;
+    color:white;
 
 }
 
-/*======================================================
-INTRODUCTION
-======================================================*/
+nav a.active{
+
+    background:#0F4C81;
+
+    color:white;
+
+}
+
+/*==================================================
+INTRO
+==================================================*/
 
 .intro{
 
-    max-width:1000px;
+    width:90%;
+
+    max-width:1100px;
 
     margin:70px auto;
-
-    padding:0 20px;
 
     text-align:center;
 
@@ -160,49 +180,49 @@ INTRODUCTION
 
     color:#0F4C81;
 
-    font-size:34px;
+    font-size:40px;
 
-    margin-bottom:20px;
+    margin-bottom:25px;
 
 }
 
 .intro p{
 
-    color:#666;
+    font-size:18px;
 
-    font-size:17px;
+    color:#666;
 
 }
 
-/*======================================================
-MAIN
-======================================================*/
+/*==================================================
+PORTFOLIO
+==================================================*/
 
-main{
+#portfolio{
 
-    max-width:1200px;
+    width:92%;
+
+    max-width:1300px;
 
     margin:auto;
 
-    padding:0 20px 80px;
-
 }
 
-/*======================================================
+/*==================================================
 PROJECT CARD
-======================================================*/
+==================================================*/
 
 .project{
 
-    background:#ffffff;
+    background:white;
 
     border-radius:18px;
 
-    margin-bottom:70px;
+    margin-bottom:60px;
 
     overflow:hidden;
 
-    box-shadow:0 8px 30px rgba(0,0,0,.08);
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
 
     transition:.35s;
 
@@ -212,8 +232,6 @@ PROJECT CARD
 
     transform:translateY(-5px);
 
-    box-shadow:0 15px 40px rgba(0,0,0,.15);
-
 }
 
 .project-content{
@@ -222,41 +240,41 @@ PROJECT CARD
 
 }
 
-/*======================================================
-PROJECT TITLE
-======================================================*/
-
 .project h2{
 
     color:#0F4C81;
 
-    font-size:32px;
+    font-size:34px;
 
-    margin-bottom:15px;
+    margin-bottom:18px;
 
 }
-
-/*======================================================
-DESCRIPTION
-======================================================*/
 
 .description{
 
     color:#666;
 
-    font-size:17px;
-
     margin-bottom:25px;
+
+    font-size:17px;
 
 }
 
-/*======================================================
+/*==================================================
 PREVIEW IMAGE
-======================================================*/
+==================================================*/
 
 .preview{
 
     width:100%;
+
+    height:420px;
+
+    object-fit:contain;
+
+    object-position:center;
+
+    background:#f7f7f7;
 
     border-radius:12px;
 
@@ -264,9 +282,7 @@ PREVIEW IMAGE
 
     cursor:pointer;
 
-    transition:.35s;
-
-    display:block;
+    transition:.3s;
 
 }
 
@@ -274,15 +290,15 @@ PREVIEW IMAGE
 
     transform:scale(1.01);
 
-    box-shadow:0 10px 25px rgba(0,0,0,.18);
-
 }
 
-/*======================================================
+/*==================================================
 PROJECT FOOTER
-======================================================*/
+==================================================*/
 
 .project-footer{
+
+    margin-top:25px;
 
     display:flex;
 
@@ -290,37 +306,27 @@ PROJECT FOOTER
 
     align-items:center;
 
-    margin-top:25px;
-
     flex-wrap:wrap;
 
     gap:15px;
 
 }
 
-/*======================================================
-DRAWING COUNT
-======================================================*/
-
 .drawing-count{
 
-    color:#888;
+    font-weight:bold;
 
-    font-size:15px;
+    color:#555;
 
 }
 
-/*======================================================
-BUTTON
-======================================================*/
-
 .view-btn{
+
+    border:none;
 
     background:#0F4C81;
 
-    color:#fff;
-
-    border:none;
+    color:white;
 
     padding:12px 26px;
 
@@ -330,8 +336,6 @@ BUTTON
 
     font-size:15px;
 
-    font-weight:600;
-
     transition:.3s;
 
 }
@@ -340,30 +344,28 @@ BUTTON
 
     background:#083252;
 
-    transform:translateY(-2px);
-
 }
 
-/*======================================================
+/*==================================================
 FOOTER
-======================================================*/
+==================================================*/
 
 footer{
 
+    margin-top:70px;
+
     background:#0F4C81;
 
-    color:#fff;
+    color:white;
 
     text-align:center;
 
-    padding:30px;
-
-    font-size:15px;
+    padding:25px;
 
 }
-/*======================================================
+/*==================================================
 LIGHTBOX
-======================================================*/
+==================================================*/
 
 .lightbox{
 
@@ -373,15 +375,13 @@ LIGHTBOX
 
     inset:0;
 
-    background:rgba(0,0,0,.94);
+    background:rgba(0,0,0,.95);
 
     justify-content:center;
 
     align-items:center;
 
     z-index:99999;
-
-    overflow:hidden;
 
     animation:fadeIn .3s;
 
@@ -397,35 +397,29 @@ LIGHTBOX
 
     position:relative;
 
-    max-width:92vw;
+    max-width:95vw;
 
-    max-height:90vh;
+    max-height:95vh;
 
-    overflow:hidden;
+    display:flex;
 
-    cursor:grab;
+    justify-content:center;
 
-}
-
-.lightbox-container:active{
-
-    cursor:grabbing;
+    align-items:center;
 
 }
 
 #lightbox-image{
 
-    display:block;
+    max-width:90vw;
 
-    max-width:100%;
-
-    max-height:85vh;
+    max-height:88vh;
 
     object-fit:contain;
 
-    transform-origin:center center;
-
-    transition:transform .15s linear;
+    transition:
+        transform .15s,
+        opacity .2s;
 
     user-select:none;
 
@@ -433,27 +427,25 @@ LIGHTBOX
 
 }
 
-/*======================================================
-CLOSE BUTTON
-======================================================*/
+/*==================================================
+LIGHTBOX BUTTON
+==================================================*/
 
 #close{
 
     position:absolute;
 
-    top:20px;
+    top:-10px;
 
-    right:30px;
-
-    color:#fff;
+    right:0;
 
     font-size:46px;
 
+    color:white;
+
     cursor:pointer;
 
-    z-index:100001;
-
-    transition:.25s;
+    transition:.3s;
 
 }
 
@@ -462,10 +454,6 @@ CLOSE BUTTON
     transform:scale(1.15);
 
 }
-
-/*======================================================
-PREVIOUS & NEXT
-======================================================*/
 
 #previous,
 #next{
@@ -476,37 +464,37 @@ PREVIOUS & NEXT
 
     transform:translateY(-50%);
 
-    background:rgba(255,255,255,.12);
-
-    border:none;
-
-    color:#fff;
-
     width:58px;
 
     height:58px;
 
+    border:none;
+
     border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+
+    color:white;
+
+    font-size:28px;
 
     cursor:pointer;
 
-    font-size:26px;
+    backdrop-filter:blur(6px);
 
     transition:.3s;
-
-    backdrop-filter:blur(6px);
 
 }
 
 #previous{
 
-    left:25px;
+    left:-75px;
 
 }
 
 #next{
 
-    right:25px;
+    right:-75px;
 
 }
 
@@ -517,23 +505,23 @@ PREVIOUS & NEXT
 
 }
 
-/*======================================================
+/*==================================================
 COUNTER
-======================================================*/
+==================================================*/
 
 #image-counter{
 
     position:absolute;
 
-    top:25px;
+    top:-40px;
 
     left:50%;
 
     transform:translateX(-50%);
 
-    color:#fff;
+    color:white;
 
-    font-size:17px;
+    font-size:18px;
 
     font-weight:600;
 
@@ -541,29 +529,27 @@ COUNTER
 
 }
 
-/*======================================================
+/*==================================================
 WATERMARK
-======================================================*/
+==================================================*/
 
 #watermark{
 
     position:absolute;
 
-    bottom:25px;
+    bottom:20px;
 
-    right:35px;
+    right:20px;
 
-    color:#ffffff;
+    color:white;
 
     opacity:.12;
 
-    font-size:14px;
+    font-size:16px;
 
-    line-height:1.6;
+    font-weight:bold;
 
     text-align:right;
-
-    font-weight:700;
 
     letter-spacing:2px;
 
@@ -571,41 +557,11 @@ WATERMARK
 
     user-select:none;
 
-    text-transform:uppercase;
-
 }
 
-/*======================================================
-LOADING
-======================================================*/
-
-#loading{
-
-    position:fixed;
-
-    inset:0;
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-    background:#ffffff;
-
-    color:#0F4C81;
-
-    font-size:22px;
-
-    font-weight:bold;
-
-    z-index:999999;
-
-}
-
-/*======================================================
+/*==================================================
 BACK TO TOP
-======================================================*/
+==================================================*/
 
 #backToTop{
 
@@ -625,15 +581,15 @@ BACK TO TOP
 
     background:#0F4C81;
 
-    color:#fff;
+    color:white;
 
     cursor:pointer;
 
+    font-size:20px;
+
     display:none;
 
-    font-size:22px;
-
-    box-shadow:0 5px 18px rgba(0,0,0,.2);
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
 
     transition:.3s;
 
@@ -641,15 +597,15 @@ BACK TO TOP
 
 #backToTop:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(-5px);
 
     background:#083252;
 
 }
 
-/*======================================================
-FADE ANIMATION
-======================================================*/
+/*==================================================
+ANIMATION
+==================================================*/
 
 @keyframes fadeIn{
 
@@ -669,65 +625,81 @@ FADE ANIMATION
 
 .project{
 
-    animation:fadeIn .6s;
+    opacity:1;
+
+    transition:
+        transform .35s,
+        opacity .4s;
 
 }
 
-/*======================================================
-DESKTOP
-======================================================*/
+.project.show{
 
-@media (min-width:1200px){
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/*==================================================
+TABLET
+==================================================*/
+
+@media(max-width:1024px){
 
 .hero h1{
 
-    font-size:52px;
+    font-size:42px;
 
 }
 
-.hero p{
+.intro h2{
 
-    font-size:21px;
-
-}
-
-.project{
-
-    padding:0;
+    font-size:34px;
 
 }
 
-.project-content{
+.project h2{
 
-    padding:40px;
+    font-size:28px;
 
 }
 
 .preview{
 
-    max-height:650px;
+    height:340px;
 
-    object-fit:contain;
+}
+
+#previous{
+
+    left:10px;
+
+}
+
+#next{
+
+    right:10px;
 
 }
 
 }
 
-/*======================================================
-TABLET
-======================================================*/
+/*==================================================
+MOBILE
+==================================================*/
 
-@media (min-width:768px) and (max-width:1199px){
+@media(max-width:768px){
 
-.hero{
+header{
 
-    padding:10px;
+    padding:60px 15px;
 
 }
 
 .hero h1{
 
-    font-size:42px;
+    font-size:34px;
 
 }
 
@@ -737,80 +709,21 @@ TABLET
 
 }
 
-main{
-
-    width:94%;
-
-}
-
-.project-content{
-
-    padding:30px;
-
-}
-
-.project h2{
-
-    font-size:28px;
-
-}
-
-.description{
-
-    font-size:16px;
-
-}
-
-.preview{
-
-    max-height:520px;
-
-}
-
-#previous,
-#next{
-
-    width:52px;
-
-    height:52px;
-
-}
-
-}
-
-/*======================================================
-MOBILE
-======================================================*/
-
-@media (max-width:767px){
-
-header{
-
-    padding:60px 20px;
-
-}
-
-.hero h1{
-
-    font-size:30px;
-
-}
-
-.hero p{
-
-    font-size:16px;
-
-}
-
 nav ul{
 
     flex-direction:column;
 
+    padding:10px;
+
+}
+
+nav li{
+
+    width:100%;
+
 }
 
 nav a{
-
-    width:100%;
 
     text-align:center;
 
@@ -818,37 +731,49 @@ nav a{
 
 .intro{
 
-    margin:40px auto;
+    margin:45px auto;
 
 }
 
 .intro h2{
 
-    font-size:28px;
+    font-size:30px;
+
+}
+
+.intro p{
+
+    font-size:16px;
 
 }
 
 .project{
 
-    margin-bottom:40px;
+    margin-bottom:35px;
 
 }
 
 .project-content{
 
-    padding:20px;
+    padding:22px;
 
 }
 
 .project h2{
 
-    font-size:24px;
+    font-size:26px;
 
 }
 
 .description{
 
     font-size:15px;
+
+}
+
+.preview{
+
+    height:250px;
 
 }
 
@@ -866,21 +791,11 @@ nav a{
 
 }
 
-.preview{
+#lightbox-image{
 
-    max-height:350px;
+    max-width:95vw;
 
-}
-
-#previous{
-
-    left:8px;
-
-}
-
-#next{
-
-    right:8px;
+    max-height:75vh;
 
 }
 
@@ -895,21 +810,33 @@ nav a{
 
 }
 
+#previous{
+
+    left:5px;
+
+}
+
+#next{
+
+    right:5px;
+
+}
+
 #close{
 
-    top:12px;
+    top:-35px;
 
-    right:18px;
+    right:5px;
 
-    font-size:36px;
+    font-size:38px;
 
 }
 
 #image-counter{
 
-    top:18px;
+    top:-35px;
 
-    font-size:14px;
+    font-size:15px;
 
 }
 
@@ -919,61 +846,78 @@ nav a{
 
     right:12px;
 
-    font-size:10px;
-
-    letter-spacing:1px;
+    font-size:11px;
 
 }
 
 #backToTop{
 
-    width:44px;
+    width:45px;
 
-    height:44px;
+    height:45px;
+
+}
+
+}
+
+/*==================================================
+SMALL MOBILE
+==================================================*/
+
+@media(max-width:480px){
+
+.hero h1{
+
+    font-size:28px;
+
+}
+
+.hero p{
+
+    font-size:16px;
+
+}
+
+.intro h2{
+
+    font-size:26px;
+
+}
+
+.preview{
+
+    height:200px;
+
+}
+
+.project h2{
+
+    font-size:22px;
 
 }
 
 }
-/*=========================================
-ACTIVE MENU
-=========================================*/
 
-nav a.active{
+/*==================================================
+SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
 
     background:#0F4C81;
 
-    color:#fff;
+    border-radius:10px;
 
 }
 
-/*=========================================
-SCROLL ANIMATION
-=========================================*/
+::-webkit-scrollbar-track{
 
-.project{
-
-    transition:
-        opacity .6s,
-        transform .6s;
-
-}
-
-.project.show{
-
-    opacity:1 !important;
-
-    transform:translateY(0) !important;
-
-}
-
-/*=========================================
-LIGHTBOX TRANSITION
-=========================================*/
-
-#lightbox-image{
-
-    transition:
-        opacity .2s,
-        transform .2s;
+    background:#e8edf5;
 
 }
