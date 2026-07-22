@@ -95,7 +95,7 @@ const projects = [
 
 },
 
-    {
+{
     title: "Architectural Insulation Layout and Detail",
 
     description:
