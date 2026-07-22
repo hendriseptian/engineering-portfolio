@@ -1,9 +1,12 @@
-/* =====================================================
-   Mechanical Engineering Portfolio
-   Author : Hendri Septian
-===================================================== */
+/*======================================================
+Engineering Portfolio
+Author : Hendri Septian
+Version : 1.0
+======================================================*/
 
-/* RESET */
+/*======================================================
+RESET
+======================================================*/
 
 *{
     margin:0;
@@ -17,26 +20,25 @@ html{
 
 body{
 
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:"Segoe UI",Arial,sans-serif;
 
     background:#f5f7fa;
 
     color:#333;
 
-    line-height:1.6;
+    line-height:1.7;
 
 }
 
-
-/* =====================================================
-   HEADER
-===================================================== */
+/*======================================================
+HEADER
+======================================================*/
 
 header{
 
-    background:#0F4C81;
+    background:linear-gradient(135deg,#0F4C81,#1D6FA5);
 
-    color:#ffffff;
+    color:#fff;
 
     padding:80px 20px;
 
@@ -54,24 +56,27 @@ header{
 
 .hero h1{
 
-    font-size:42px;
+    font-size:48px;
+
+    font-weight:700;
 
     margin-bottom:10px;
+
+    letter-spacing:1px;
 
 }
 
 .hero p{
 
-    font-size:18px;
+    font-size:20px;
 
     opacity:.9;
 
 }
 
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
+/*======================================================
+NAVIGATION
+======================================================*/
 
 nav{
 
@@ -79,11 +84,11 @@ nav{
 
     top:0;
 
-    z-index:999;
+    z-index:1000;
 
     background:#ffffff;
 
-    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
 
 }
 
@@ -93,31 +98,35 @@ nav ul{
 
     justify-content:center;
 
+    align-items:center;
+
     flex-wrap:wrap;
 
     list-style:none;
 
-    padding:15px;
+    padding:14px;
 
 }
 
 nav li{
 
-    margin:5px;
+    margin:6px;
 
 }
 
 nav a{
 
+    display:block;
+
     text-decoration:none;
 
     color:#0F4C81;
 
-    font-weight:bold;
+    font-weight:600;
 
     padding:10px 18px;
 
-    border-radius:30px;
+    border-radius:25px;
 
     transition:.3s;
 
@@ -131,20 +140,19 @@ nav a:hover{
 
 }
 
-
-/* =====================================================
-   INTRO
-===================================================== */
+/*======================================================
+INTRODUCTION
+======================================================*/
 
 .intro{
 
     max-width:1000px;
 
-    margin:60px auto;
-
-    text-align:center;
+    margin:70px auto;
 
     padding:0 20px;
+
+    text-align:center;
 
 }
 
@@ -152,7 +160,9 @@ nav a:hover{
 
     color:#0F4C81;
 
-    margin-bottom:15px;
+    font-size:34px;
+
+    margin-bottom:20px;
 
 }
 
@@ -160,109 +170,200 @@ nav a:hover{
 
     color:#666;
 
+    font-size:17px;
+
 }
 
-
-/* =====================================================
-   MAIN
-===================================================== */
+/*======================================================
+MAIN
+======================================================*/
 
 main{
 
-    max-width:1300px;
+    max-width:1200px;
 
     margin:auto;
 
-    padding:0 20px 60px;
+    padding:0 20px 80px;
 
 }
 
-
-/* =====================================================
-   PROJECT CARD
-===================================================== */
+/*======================================================
+PROJECT CARD
+======================================================*/
 
 .project{
 
     background:#ffffff;
 
-    margin-bottom:60px;
+    border-radius:18px;
 
-    padding:30px;
+    margin-bottom:70px;
 
-    border-radius:15px;
+    overflow:hidden;
 
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
 
 }
+
+.project:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+}
+
+.project-content{
+
+    padding:35px;
+
+}
+
+/*======================================================
+PROJECT TITLE
+======================================================*/
 
 .project h2{
 
     color:#0F4C81;
 
-    margin-bottom:10px;
+    font-size:32px;
+
+    margin-bottom:15px;
 
 }
 
-.project p{
+/*======================================================
+DESCRIPTION
+======================================================*/
+
+.description{
 
     color:#666;
+
+    font-size:17px;
 
     margin-bottom:25px;
 
 }
 
-.project-count{
+/*======================================================
+PREVIEW IMAGE
+======================================================*/
 
-    font-size:14px;
-
-    color:#888;
-
-    margin-bottom:20px;
-
-}
-
-
-/* =====================================================
-   GALLERY
-===================================================== */
-
-.gallery{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-
-    gap:20px;
-
-}
-
-.gallery img{
+.preview{
 
     width:100%;
 
-    border-radius:10px;
+    border-radius:12px;
+
+    border:1px solid #ddd;
 
     cursor:pointer;
 
+    transition:.35s;
+
+    display:block;
+
+}
+
+.preview:hover{
+
+    transform:scale(1.01);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+}
+
+/*======================================================
+PROJECT FOOTER
+======================================================*/
+
+.project-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:25px;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+/*======================================================
+DRAWING COUNT
+======================================================*/
+
+.drawing-count{
+
+    color:#888;
+
+    font-size:15px;
+
+}
+
+/*======================================================
+BUTTON
+======================================================*/
+
+.view-btn{
+
+    background:#0F4C81;
+
+    color:#fff;
+
+    border:none;
+
+    padding:12px 26px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
     transition:.3s;
 
-    border:1px solid #dddddd;
+}
+
+.view-btn:hover{
+
+    background:#083252;
+
+    transform:translateY(-2px);
 
 }
 
-.gallery img:hover{
+/*======================================================
+FOOTER
+======================================================*/
 
-    transform:scale(1.03);
+footer{
 
-    box-shadow:0 10px 20px rgba(0,0,0,.25);
+    background:#0F4C81;
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:30px;
+
+    font-size:15px;
 
 }
-
-
-/* =====================================================
-   LIGHTBOX
-===================================================== */
+/*======================================================
+LIGHTBOX
+======================================================*/
 
 .lightbox{
 
@@ -270,38 +371,71 @@ main{
 
     position:fixed;
 
-    left:0;
+    inset:0;
 
-    top:0;
-
-    width:100%;
-
-    height:100%;
-
-    background:rgba(0,0,0,.92);
+    background:rgba(0,0,0,.94);
 
     justify-content:center;
 
     align-items:center;
 
-    z-index:9999;
+    z-index:99999;
+
+    overflow:hidden;
+
+    animation:fadeIn .3s;
 
 }
 
-.lightbox img{
+.lightbox.active{
 
-    max-width:90%;
-
-    max-height:85%;
-
-    border-radius:8px;
+    display:flex;
 
 }
 
+.lightbox-container{
 
-/* =====================================================
-   CLOSE
-===================================================== */
+    position:relative;
+
+    max-width:92vw;
+
+    max-height:90vh;
+
+    overflow:hidden;
+
+    cursor:grab;
+
+}
+
+.lightbox-container:active{
+
+    cursor:grabbing;
+
+}
+
+#lightbox-image{
+
+    display:block;
+
+    max-width:100%;
+
+    max-height:85vh;
+
+    object-fit:contain;
+
+    transform-origin:center center;
+
+    transition:transform .15s linear;
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+/*======================================================
+CLOSE BUTTON
+======================================================*/
 
 #close{
 
@@ -309,85 +443,352 @@ main{
 
     top:20px;
 
-    right:40px;
+    right:30px;
 
-    color:white;
+    color:#fff;
 
-    font-size:50px;
-
-    cursor:pointer;
-
-}
-
-
-/* =====================================================
-   PREVIOUS
-===================================================== */
-
-#previous{
-
-    position:absolute;
-
-    left:25px;
-
-    background:none;
-
-    border:none;
-
-    color:white;
-
-    font-size:50px;
+    font-size:46px;
 
     cursor:pointer;
 
+    z-index:100001;
+
+    transition:.25s;
+
 }
 
+#close:hover{
 
-/* =====================================================
-   NEXT
-===================================================== */
+    transform:scale(1.15);
 
+}
+
+/*======================================================
+PREVIOUS & NEXT
+======================================================*/
+
+#previous,
 #next{
 
     position:absolute;
 
-    right:25px;
+    top:50%;
 
-    background:none;
+    transform:translateY(-50%);
+
+    background:rgba(255,255,255,.12);
 
     border:none;
 
-    color:white;
+    color:#fff;
 
-    font-size:50px;
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
 
     cursor:pointer;
 
+    font-size:26px;
+
+    transition:.3s;
+
+    backdrop-filter:blur(6px);
+
 }
 
+#previous{
 
-/* =====================================================
-   FOOTER
-===================================================== */
+    left:25px;
 
-footer{
+}
+
+#next{
+
+    right:25px;
+
+}
+
+#previous:hover,
+#next:hover{
 
     background:#0F4C81;
 
-    color:white;
+}
 
-    text-align:center;
+/*======================================================
+COUNTER
+======================================================*/
+
+#image-counter{
+
+    position:absolute;
+
+    top:25px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+}
+
+/*======================================================
+WATERMARK
+======================================================*/
+
+#watermark{
+
+    position:absolute;
+
+    bottom:25px;
+
+    right:35px;
+
+    color:#ffffff;
+
+    opacity:.12;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    text-align:right;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    pointer-events:none;
+
+    user-select:none;
+
+    text-transform:uppercase;
+
+}
+
+/*======================================================
+LOADING
+======================================================*/
+
+#loading{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#ffffff;
+
+    color:#0F4C81;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    z-index:999999;
+
+}
+
+/*======================================================
+BACK TO TOP
+======================================================*/
+
+#backToTop{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#0F4C81;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    display:none;
+
+    font-size:22px;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.2);
+
+    transition:.3s;
+
+}
+
+#backToTop:hover{
+
+    transform:translateY(-4px);
+
+    background:#083252;
+
+}
+
+/*======================================================
+FADE ANIMATION
+======================================================*/
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+.project{
+
+    animation:fadeIn .6s;
+
+}
+
+/*======================================================
+DESKTOP
+======================================================*/
+
+@media (min-width:1200px){
+
+.hero h1{
+
+    font-size:52px;
+
+}
+
+.hero p{
+
+    font-size:21px;
+
+}
+
+.project{
+
+    padding:0;
+
+}
+
+.project-content{
+
+    padding:40px;
+
+}
+
+.preview{
+
+    max-height:650px;
+
+    object-fit:contain;
+
+}
+
+}
+
+/*======================================================
+TABLET
+======================================================*/
+
+@media (min-width:768px) and (max-width:1199px){
+
+.hero{
+
+    padding:10px;
+
+}
+
+.hero h1{
+
+    font-size:42px;
+
+}
+
+.hero p{
+
+    font-size:18px;
+
+}
+
+main{
+
+    width:94%;
+
+}
+
+.project-content{
 
     padding:30px;
 
 }
 
+.project h2{
 
-/* =====================================================
-   MOBILE
-===================================================== */
+    font-size:28px;
 
-@media(max-width:768px){
+}
+
+.description{
+
+    font-size:16px;
+
+}
+
+.preview{
+
+    max-height:520px;
+
+}
+
+#previous,
+#next{
+
+    width:52px;
+
+    height:52px;
+
+}
+
+}
+
+/*======================================================
+MOBILE
+======================================================*/
+
+@media (max-width:767px){
+
+header{
+
+    padding:60px 20px;
+
+}
 
 .hero h1{
 
@@ -401,33 +802,134 @@ footer{
 
 }
 
+nav ul{
+
+    flex-direction:column;
+
+}
+
+nav a{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+.intro{
+
+    margin:40px auto;
+
+}
+
+.intro h2{
+
+    font-size:28px;
+
+}
+
 .project{
+
+    margin-bottom:40px;
+
+}
+
+.project-content{
 
     padding:20px;
 
 }
 
-.gallery{
+.project h2{
 
-    grid-template-columns:1fr;
+    font-size:24px;
+
+}
+
+.description{
+
+    font-size:15px;
+
+}
+
+.project-footer{
+
+    flex-direction:column;
+
+    align-items:stretch;
+
+}
+
+.view-btn{
+
+    width:100%;
+
+}
+
+.preview{
+
+    max-height:350px;
 
 }
 
 #previous{
 
-    left:10px;
+    left:8px;
 
 }
 
 #next{
 
-    right:10px;
+    right:8px;
+
+}
+
+#previous,
+#next{
+
+    width:46px;
+
+    height:46px;
+
+    font-size:22px;
 
 }
 
 #close{
 
-    right:20px;
+    top:12px;
+
+    right:18px;
+
+    font-size:36px;
+
+}
+
+#image-counter{
+
+    top:18px;
+
+    font-size:14px;
+
+}
+
+#watermark{
+
+    bottom:12px;
+
+    right:12px;
+
+    font-size:10px;
+
+    letter-spacing:1px;
+
+}
+
+#backToTop{
+
+    width:44px;
+
+    height:44px;
 
 }
 
