@@ -900,6 +900,28 @@ document.querySelectorAll(".project").forEach(card=>{
 });
 
 /*==================================================
+LOADING DOTS
+==================================================*/
+
+const loadingDots = document.getElementById("loadingDots");
+
+if (loadingDots) {
+
+    const dots = [".", "..", "..."];
+
+    let i = 0;
+
+    setInterval(() => {
+
+        loadingDots.textContent = dots[i];
+
+        i = (i + 1) % dots.length;
+
+    }, 400);
+
+}
+
+/*==================================================
 CONSOLE
 ==================================================*/
 
