@@ -598,7 +598,7 @@ LIGHTBOX BUTTON
 #previous,
 #next{
 
-    position:absolute;
+    position:fixed;
 
     top:50%;
 
@@ -815,13 +815,13 @@ TABLET
 
 #previous{
 
-    left:10px;
+    left:20px;
 
 }
 
 #next{
 
-    right:10px;
+    right:20px;
 
 }
 
