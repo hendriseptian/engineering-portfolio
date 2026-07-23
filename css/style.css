@@ -1211,3 +1211,21 @@ bottom:20px;
 }
 
 }
+
+/* ==========================================
+NAVIGATION MOBILE
+========================================== */
+
+.nav-arrow{
+
+    display:none;
+
+}
+
+.nav-wrapper{
+
+    overflow-x:auto;
+
+}
+
+}
