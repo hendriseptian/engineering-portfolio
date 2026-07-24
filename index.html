@@ -14,7 +14,10 @@
     
     <link rel="stylesheet"
           href="css/style.css">
-
+    <script type="module"
+        src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+    </script>
+    
 </head>
 
 <body>
@@ -198,6 +201,46 @@ BACK TO TOP
 
 </button>
 
+<!-- ==========================================
+3D MODELS
+=========================================== -->
+
+<section id="models" class="models-section">
+
+    <h2>3D Models</h2>
+
+    <p class="section-description">
+
+        Interactive 3D models for engineering visualization.
+
+    </p>
+
+    <div class="model-card">
+
+        <h3>Modern House</h3>
+
+        <model-viewer
+
+            src="models/house.glb"
+
+            alt="Modern House"
+
+            camera-controls
+
+            auto-rotate
+
+            shadow-intensity="1"
+
+            exposure="1"
+
+            interaction-prompt="auto">
+
+        </model-viewer>
+
+    </div>
+
+</section>
+    
 <!-- ==========================================
 FOOTER
 =========================================== -->
