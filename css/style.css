@@ -1098,6 +1098,7 @@ SCROLLBAR
 
 }
 
+
 @media (max-width:768px){
 
 .hero{
@@ -1162,57 +1163,88 @@ SCROLLBAR
 
 .intro{
 
-padding:50px 20px;
+    padding:50px 20px;
 
 }
 
 .intro h2{
 
-font-size:30px;
+    font-size:30px;
 
 }
 
 .project{
 
-padding:20px;
+    padding:20px;
 
-margin:25px 15px;
+    margin:25px 15px;
 
 }
 
 .project h2{
 
-font-size:28px;
+    font-size:28px;
 
 }
 
 .preview{
 
-max-height:240px;
+    max-height:240px;
 
-object-fit:cover;
+    object-fit:cover;
 
 }
 
 .project-footer{
 
-flex-direction:column;
+    flex-direction:column;
 
-gap:15px;
+    gap:15px;
 
 }
 
 .view-btn{
 
-width:100%;
+    width:100%;
 
 }
 
 #backToTop{
 
-right:20px;
+    right:20px;
 
-bottom:20px;
+    bottom:20px;
+
+}
+
+
+/*==================================================
+3D MODELS - MOBILE
+==================================================*/
+
+.models-section{
+
+    width:90%;
+
+    margin:60px auto;
+
+}
+
+.models-section h2{
+
+    font-size:30px;
+
+}
+
+.model-card{
+
+    padding:15px;
+
+}
+
+model-viewer{
+
+    height:350px;
 
 }
 
