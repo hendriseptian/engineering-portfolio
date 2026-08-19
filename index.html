@@ -210,18 +210,27 @@ BACK TO TOP
     <h2>3D Models</h2>
 
     <p class="section-description">
-        This interactive model is provided as a demonstration of the 3D viewer. Engineering models will be added in future updates.
+        Interactive 3D models for engineering visualization.
     </p>
+
+
+    <!-- PORTABLE STEEL BUILDING -->
 
     <div class="model-card">
 
-        <h3>Sample 3D Model</h3>
+        <h3>Portable Steel Building</h3>
+
+        <p class="model-description">
+            3D model of a portable steel building for engineering visualization.
+        </p>
 
         <model-viewer
-            src="models/3d-model.glb"
-            alt="3D Engineering Model"
+            src="models/3D-Building.glb"
+            alt="Portable Steel Building"
             camera-controls
             auto-rotate
+            auto-rotate-delay="0"
+            rotation-per-second="15deg"
             shadow-intensity="1"
             exposure="1"
             interaction-prompt="auto"
@@ -231,7 +240,34 @@ BACK TO TOP
 
     </div>
 
-</section>
+
+    <!-- STRUCTURE PORTABLE STEEL BUILDING -->
+
+    <div class="model-card">
+
+        <h3>Portable Steel Building Structure</h3>
+
+        <p class="model-description">
+            3D model showing the structural framing of a portable steel building.
+        </p>
+
+        <model-viewer
+            src="models/Structure-3D-Building.glb"
+            alt="Portable Steel Building Structure"
+            camera-controls
+            auto-rotate
+            auto-rotate-delay="0"
+            rotation-per-second="15deg"
+            shadow-intensity="1"
+            exposure="1"
+            interaction-prompt="auto"
+            loading="lazy">
+
+        </model-viewer>
+
+    </div>
+
+</section> 
     
 <!-- ==========================================
 FOOTER
